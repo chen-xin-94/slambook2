@@ -1,4 +1,8 @@
 option(USE_UBUNTU_20 "Set to ON if you are using Ubuntu 20.04" OFF)
+
+# 为使用 sophus，需要使用find_package命令找到它
+find_package(Sophus REQUIRED) 
+
 find_package(Pangolin REQUIRED)
 if(USE_UBUNTU_20)
     message("You are using Ubuntu 20.04, fmt::fmt will be linked")
@@ -8,3 +12,4 @@ endif()
 include_directories(${Pangolin_INCLUDE_DIRS})
 add_executable(trajectoryError trajectoryError.cpp)
 target_link_libraries(trajectoryError ${Pangolin_LIBRARIES} ${FMT_LIBRARIES})
+target_link_libraries(trajectoryError Sophus::Sophus)
