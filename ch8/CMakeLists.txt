@@ -22,3 +22,4 @@ target_link_libraries(optical_flow ${OpenCV_LIBS})
 
 add_executable(direct_method direct_method.cpp)
 target_link_libraries(direct_method ${OpenCV_LIBS} ${Pangolin_LIBRARIES})
+target_link_libraries(direct_method Sophus::Sophus)

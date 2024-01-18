@@ -22,3 +22,5 @@ add_executable(bundle_adjustment_ceres bundle_adjustment_ceres.cpp)
 
 target_link_libraries(bundle_adjustment_ceres ${CERES_LIBRARIES} bal_common)
 target_link_libraries(bundle_adjustment_g2o ${G2O_LIBS} bal_common)
+
+target_link_libraries(bundle_adjustment_g2o Sophus::Sophus)
